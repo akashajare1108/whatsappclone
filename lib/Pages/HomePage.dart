@@ -78,6 +78,7 @@ class HomePage extends StatelessWidget {
                   labelStyle: TextStyle(fontSize: 16,
                       fontWeight: FontWeight.bold),
                   tabs: [
+                    // tab 1
                     Container(
                       width: 25,
                       child: Tab(
@@ -85,22 +86,40 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
+                      // tab 2
                       width: 80,
                       child: Tab(
                         child: Row(
                           children: [
-                            Text("CHATS"),
+                            Text("Chats"),
                             Container(
                               height: 20,
                               width: 20,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                "10",
+                                style: TextStyle(
+                                  color: Color(0xFF075E55),
+                                  fontSize: 14,
+                                ),
+                              ),
                             ),
                           ],
                         )
                       ),
                    ),
+                  //   Tab 3
+                    Container(
+                      width: 90,
+                      child: Tab(
+                        child: Text("Status"),),),
+                    Container(
+                      width: 90,
+                      child: Tab(
+                        child: Text("Calls"),),),
                   ],
                 ),
               )
