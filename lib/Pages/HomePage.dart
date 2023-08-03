@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,6 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: 1,
         length: 4, 
         child: Scaffold(
           appBar: PreferredSize(
@@ -23,6 +25,7 @@ class HomePage extends StatelessWidget {
                 child: Icon(Icons.search,size: 28,),
                 ),
                 PopupMenuButton(
+                  elevation: 10,
                   padding : EdgeInsets.symmetric(vertical: 20),
                   iconSize: 28,
                   itemBuilder: (context) => [
@@ -80,30 +83,33 @@ class HomePage extends StatelessWidget {
                   tabs: [
                     // tab 1
                     Container(
-                      width: 25,
+                      width: 24,
                       child: Tab(
                         icon: Icon(Icons.camera_alt),
                       ),
                     ),
                     Container(
                       // tab 2
-                      width: 80,
+                      width: 90,
                       child: Tab(
                         child: Row(
                           children: [
-                            Text("Chats"),
+                            Text("CHATS"),
+                            SizedBox(width: 8,),
                             Container(
-                              height: 20,
-                              width: 20,
+                              alignment: Alignment.center,
+                              // padding: EdgeInsets.all(10),
+                              height: 22,
+                              width: 22,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(20),
                               ),
                               child: Text(
                                 "10",
                                 style: TextStyle(
                                   color: Color(0xFF075E55),
-                                  fontSize: 14,
+                                  fontSize: 13,
                                 ),
                               ),
                             ),
@@ -115,14 +121,26 @@ class HomePage extends StatelessWidget {
                     Container(
                       width: 90,
                       child: Tab(
-                        child: Text("Status"),),),
+                        child: Text("STATUS"),),),
                     Container(
+                      // tab 4
                       width: 90,
                       child: Tab(
-                        child: Text("Calls"),),),
+                        child: Text("CALLS"),),),
                   ],
                 ),
-              )
+              ),
+              Flexible(child: TabBarView(
+                children: [
+                  // tab 1
+                Container(color: Colors.black),
+                  // tab 3
+                  Container(color: Colors.black,),
+                  // tab 3
+                  Container(color: Colors.black,),
+                  // tab 4
+                  Container(color: Colors.black,),
+              ],)),
             ],
           ),
         )
